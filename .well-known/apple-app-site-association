@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "YYK3V69CQ6.com.logbook.Logbook",
+        "paths": ["/p/*"]
+      }
+    ]
+  }
+}
