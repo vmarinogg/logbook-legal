@@ -26,81 +26,29 @@ body {
 .container {
   max-width: 720px;
   margin: 0 auto;
-  padding: 80px 28px 100px;
+  padding: 0 28px;
 }
 
-/* Header with wordmark */
-header {
-  margin-bottom: 56px;
-  padding-bottom: 28px;
-  border-bottom: 1px solid var(--divider);
-  position: relative;
-}
-
-.wordmark {
-  font-family: 'DM Serif Display', serif;
-  font-style: italic;
-  font-size: 38px;
-  color: var(--ink);
-  text-decoration: none;
-  letter-spacing: -1px;
-  display: inline-block;
-}
-
-.wordmark .ribbon {
-  display: inline-block;
-  width: 8px;
-  height: 22px;
-  background: var(--ribbon);
-  margin-left: 6px;
-  vertical-align: -3px;
-  clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
-}
-
-.tagline {
-  font-size: 13px;
-  color: var(--ink2);
-  letter-spacing: 0.5px;
-  margin-top: 4px;
-}
-
-/* Page title */
+/* Shared typography */
 h1 {
   font-family: 'DM Serif Display', serif;
   font-style: italic;
-  font-size: 44px;
   font-weight: 400;
   letter-spacing: -1.5px;
   line-height: 1.1;
-  margin-bottom: 12px;
   color: var(--ink);
 }
 
-.updated {
-  font-size: 13px;
-  color: var(--ink3);
-  letter-spacing: 0.4px;
-  text-transform: uppercase;
-  margin-bottom: 48px;
-}
-
-/* Section headings */
 h2 {
   font-family: 'DM Serif Display', serif;
   font-style: italic;
   font-size: 26px;
   font-weight: 400;
   letter-spacing: -0.5px;
-  margin-top: 40px;
   margin-bottom: 14px;
   color: var(--ink);
 }
 
-h2:first-of-type {
-  margin-top: 0;
-}
-
-/* Body text */
 p {
   margin-bottom: 16px;
   color: var(--ink);
@@ -132,16 +80,357 @@ a:hover {
   border-bottom-color: var(--ribbon);
 }
 
+/* Wordmark */
+.wordmark {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 38px;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -1px;
+  display: inline-block;
+}
+
+.wordmark .ribbon {
+  display: inline-block;
+  width: 8px;
+  height: 22px;
+  background: var(--ribbon);
+  margin-left: 6px;
+  vertical-align: -3px;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+}
+
+.wordmark:hover {
+  border-bottom: none;
+}
+
+.wordmark-sm {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 24px;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.wordmark-sm .ribbon {
+  display: inline-block;
+  width: 6px;
+  height: 16px;
+  background: var(--ribbon);
+  margin-left: 4px;
+  vertical-align: -2px;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+}
+
+.wordmark-sm:hover {
+  border-bottom: none;
+}
+
+/* CTA button — ink on cream, matching app's "Start session" */
+.cta {
+  display: inline-block;
+  padding: 16px 36px;
+  background: var(--ink);
+  color: var(--bg);
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 10px;
+  border-bottom: none;
+  transition: opacity 0.15s;
+}
+
+.cta:hover {
+  opacity: 0.85;
+  border-bottom: none;
+}
+
+/* ——————————————————————————
+   Landing page sections
+   —————————————————————————— */
+
+/* Hero — split layout */
+.hero {
+  padding: 100px 0 80px;
+}
+
+.hero-split {
+  max-width: 960px;
+  display: flex;
+  align-items: center;
+  gap: 64px;
+}
+
+.hero-left {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-left .wordmark {
+  margin-bottom: 28px;
+}
+
+.hero-left h1 {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.hero-sub {
+  font-size: 17px;
+  color: var(--ink2);
+  margin-bottom: 32px;
+}
+
+.hero-note {
+  font-size: 14px;
+  color: var(--ink3);
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+
+/* Card carousel */
+.hero-right {
+  flex: 1;
+  min-width: 0;
+}
+
+.carousel-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.card-carousel {
+  position: relative;
+  min-height: 220px;
+}
+
+.carousel-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--surface);
+  border: 1px solid var(--divider);
+  border-radius: 10px;
+  padding: 28px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+}
+
+.carousel-card.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.carousel-dots {
+  display: flex;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: var(--divider);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s;
+}
+
+.dot.active {
+  background: var(--ink);
+}
+
+/* Pain quote & solution (inside carousel cards) */
+.pain-quote {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.45;
+  color: var(--ink2);
+  margin: 0 0 16px;
+  padding: 0;
+  border: none;
+}
+
+.pain-quote cite {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-style: normal;
+  font-size: 12px;
+  color: var(--ink3);
+  margin-top: 6px;
+}
+
+.solution {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0;
+  padding-left: 14px;
+  border-left: 3px solid var(--ribbon);
+}
+
+/* Notebook sentiment */
+.sentiment {
+  padding: 80px 0;
+  border-top: 1px solid var(--divider);
+  text-align: center;
+}
+
+.sentiment-quotes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 28px;
+  margin-bottom: 24px;
+}
+
+.sentiment-quotes p {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--ink);
+  margin: 0;
+  padding: 10px 20px;
+  background: var(--surface);
+  border-radius: 6px;
+}
+
+.sentiment-caption {
+  font-size: 15px;
+  color: var(--ink3);
+  margin: 0;
+}
+
+/* Features — carousel split */
+.features {
+  padding: 80px 0;
+  border-top: 1px solid var(--divider);
+}
+
+.features-split {
+  max-width: 960px;
+  display: flex;
+  align-items: center;
+  gap: 64px;
+}
+
+.features-left {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+  min-height: 180px;
+}
+
+.feature-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+}
+
+.feature-slide.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  position: relative;
+}
+
+.feature-slide h2 {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.feature-slide p {
+  font-size: 16px;
+  color: var(--ink2);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.features-dots {
+  margin-top: 28px;
+}
+
+.features-right {
+  flex-shrink: 0;
+  position: relative;
+  width: 280px;
+  min-height: 560px;
+}
+
+.feature-phone {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+}
+
+.feature-phone.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.feature-phone img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* Final CTA */
+.final-cta {
+  padding: 80px 0;
+  border-top: 1px solid var(--divider);
+  text-align: center;
+}
+
+.final-cta h2 {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.final-cta p {
+  font-size: 17px;
+  color: var(--ink2);
+  margin-bottom: 32px;
+}
+
 /* Footer */
 footer {
-  margin-top: 80px;
-  padding-top: 28px;
   border-top: 1px solid var(--divider);
+  padding: 28px 0 40px;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-links {
   display: flex;
   gap: 24px;
-  flex-wrap: wrap;
   font-size: 14px;
-  color: var(--ink2);
 }
 
 footer a {
@@ -153,52 +442,92 @@ footer a:hover {
   color: var(--ink);
 }
 
-/* Index page specific */
-.index-hero {
-  text-align: center;
-  padding: 60px 0;
+/* ——————————————————————————
+   Legal pages (privacy, terms)
+   —————————————————————————— */
+
+.legal-page .container {
+  padding: 80px 28px 100px;
 }
 
-.index-hero h1 {
-  font-size: 56px;
-  margin-bottom: 20px;
+.legal-page header {
+  margin-bottom: 56px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--divider);
 }
 
-.index-hero p {
-  font-size: 17px;
+.legal-page h1 {
+  font-size: 44px;
+  margin-bottom: 12px;
+}
+
+.legal-page h2 {
+  margin-top: 40px;
+}
+
+.legal-page h2:first-of-type {
+  margin-top: 0;
+}
+
+.updated {
+  font-size: 13px;
+  color: var(--ink3);
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  margin-bottom: 48px;
+}
+
+.tagline {
+  font-size: 13px;
   color: var(--ink2);
-  max-width: 480px;
-  margin: 0 auto 40px;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
 }
 
-.index-links {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
+/* ——————————————————————————
+   Responsive
+   —————————————————————————— */
 
-.index-links a {
-  display: inline-block;
-  padding: 14px 28px;
-  background: var(--surface);
-  border: 1px solid var(--divider);
-  border-radius: 8px;
-  color: var(--ink);
-  font-size: 15px;
-  font-weight: 500;
-  transition: all 0.15s;
-}
+@media (max-width: 768px) {
+  .hero-split,
+  .features-split {
+    flex-direction: column;
+    gap: 48px;
+    text-align: center;
+  }
 
-.index-links a:hover {
-  background: var(--ink);
-  color: var(--bg);
-  border-color: var(--ink);
+  .hero-left h1 { font-size: 40px; }
+  .hero-sub { margin-left: auto; margin-right: auto; max-width: 400px; }
+  .carousel-label { text-align: center; }
+  .carousel-dots { justify-content: center; }
+  .features-dots { justify-content: center; }
+
+  .features-right {
+    width: 240px;
+    min-height: 480px;
+  }
 }
 
 @media (max-width: 600px) {
-  .container { padding: 60px 22px 80px; }
-  h1 { font-size: 36px; }
-  .index-hero h1 { font-size: 44px; }
-  h2 { font-size: 22px; }
+  .hero { padding: 72px 0 60px; }
+  .hero-left h1 { font-size: 36px; }
+
+  .sentiment, .features, .final-cta { padding: 60px 0; }
+  .final-cta h2 { font-size: 28px; }
+
+  .feature-text h2 { font-size: 26px; }
+  .feature-row { margin-bottom: 60px; }
+
+  .sentiment-quotes { gap: 8px 16px; }
+  .sentiment-quotes p { font-size: 16px; padding: 8px 14px; }
+
+  .footer-inner {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .legal-page .container { padding: 60px 22px 80px; }
+  .legal-page h1 { font-size: 36px; }
+  .legal-page h2 { font-size: 22px; }
 }
