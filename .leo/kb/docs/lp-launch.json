@@ -1,0 +1,25 @@
+{
+  "id": "lp-launch",
+  "type": "decision",
+  "lifecycle": "permanent",
+  "scope": "project",
+  "tags": ["landing-page", "marketing", "positioning", "github-pages"],
+  "created": "2026-04-14T00:00:00Z",
+  "created_by": "owner",
+  "updated": "2026-04-14T00:00:00Z",
+  "updated_by": "leo",
+  "content": {
+    "decision": "Create a product landing page in the logbook-legal repo (uselogbook.app), pure HTML/CSS, no frameworks, with pain-driven positioning using real user quotes from market analysis.",
+    "context": "The repo already hosted legal pages on GitHub Pages. Owner wanted to exercise marketing without adding tech complexity. Market analysis had rich real quotes from Reddit/AlternativeTo that validated the subtraction positioning angle.",
+    "alternatives_considered": [
+      "Separate repo for LP — rejected to keep uselogbook.app unified",
+      "Framework-based LP (Next.js, Astro) — rejected for simplicity, pure HTML is enough"
+    ],
+    "impact": [
+      "uselogbook.app now serves as both product LP and legal docs hub",
+      "Screenshots from main logbook repo are copied into this repo",
+      "SEO meta tags, Open Graph, Twitter Card, and JSON-LD structured data added"
+    ],
+    "reversible": true
+  }
+}

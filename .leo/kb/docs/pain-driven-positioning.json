@@ -1,0 +1,23 @@
+{
+  "id": "pain-driven-positioning",
+  "type": "pattern",
+  "lifecycle": "learning",
+  "scope": "project",
+  "tags": ["marketing", "copy", "conversion", "landing-page", "positioning"],
+  "created": "2026-04-14T00:00:00Z",
+  "created_by": "leo",
+  "updated": "2026-04-14T00:00:00Z",
+  "updated_by": "leo",
+  "content": {
+    "pattern": "Pair real user pain quotes with the product's direct solution. Lead with subtraction (what the app does NOT have) rather than addition. Use short 'notebook sentiment' quotes to describe the product's purpose.",
+    "when_to_use": "Any marketing copy, landing page, outreach, or App Store description for Logbook. The target audience (serious lifters 3+ years) responds to pain validation and subtraction positioning, not feature lists or hype.",
+    "how": [
+      "Source quotes from market analysis (logbook/docs/logbook_market_analysis.md)",
+      "Pair each pain quote with a concise solution statement (ribbon-bordered for visual weight)",
+      "Use carousel/rotation to present multiple pain/solution pairs without overwhelming",
+      "Include 'notebook sentiment' phrases as social proof of what users actually want",
+      "Never use emoji, exclamation marks, or hype language in copy",
+      "Subtraction list (No social feeds, No AI coach, etc.) is a differentiator, not a limitation"
+    ]
+  }
+}

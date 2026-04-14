@@ -1,9 +1,33 @@
 {
   "version": "1",
-  "last_rebuilt": "",
-  "stats": {"total_docs": 0, "total_tags": 0, "docs_by_type": {}, "stale_count": 0, "most_connected_tag": ""},
-  "by_tag": {},
-  "by_type": {},
-  "by_scope": {},
-  "by_lifecycle": {}
+  "last_rebuilt": "2026-04-14T00:00:00Z",
+  "stats": {
+    "total_docs": 2,
+    "total_tags": 6,
+    "docs_by_type": {
+      "decision": 1,
+      "pattern": 1
+    },
+    "stale_count": 0,
+    "most_connected_tag": "marketing"
+  },
+  "by_tag": {
+    "landing-page": ["lp-launch", "pain-driven-positioning"],
+    "marketing": ["lp-launch", "pain-driven-positioning"],
+    "positioning": ["lp-launch", "pain-driven-positioning"],
+    "github-pages": ["lp-launch"],
+    "copy": ["pain-driven-positioning"],
+    "conversion": ["pain-driven-positioning"]
+  },
+  "by_type": {
+    "decision": ["lp-launch"],
+    "pattern": ["pain-driven-positioning"]
+  },
+  "by_scope": {
+    "project": ["lp-launch", "pain-driven-positioning"]
+  },
+  "by_lifecycle": {
+    "permanent": ["lp-launch"],
+    "learning": ["pain-driven-positioning"]
+  }
 }
